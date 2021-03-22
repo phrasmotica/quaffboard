@@ -36,3 +36,33 @@
     transform: rotate(360deg);
   }
 }
+
+.board-header {
+  margin-bottom: 10px;
+}
+
+.tile-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 5px;
+}
+
+.tile > button {
+  width: 150px;
+  height: 100px;
+}
+
+.counter-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 0px 5px;
+}
+
+.counter-container .amount {
+  text-align: left;
+}
+
+.counter-container .score {
+  text-align: right;
+}
