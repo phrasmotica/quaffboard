@@ -57,10 +57,19 @@
   background-color: forestgreen;
 }
 
-.tile > button {
-  display: block;
+.tile > .text {
+  line-height: 0.5;
   width: 150px;
-  height: 100px;
+  height: 60px;
+}
+
+.button-container {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.button-container > button > span {
+  font-size: 16pt;
 }
 
 .tile .text > span {
@@ -71,7 +80,7 @@
 .counter-container {
   display: flex;
   justify-content: space-between;
-  margin: 0px 2px;
+  margin-bottom: 5px;
 }
 
 .counter-container .amount {

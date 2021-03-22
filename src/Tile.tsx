@@ -3,6 +3,7 @@ interface ITileProps {
     amount: string
     score: number
     bumpScore: () => void
+    dropScore: () => void
 }
 
 export const Tile = (props: ITileProps) => {
@@ -13,13 +14,11 @@ export const Tile = (props: ITileProps) => {
 
     return (
         <div className={className}>
-            <button onClick={props.bumpScore}>
-                <div className="text">
-                    <span>
-                        {props.text}
-                    </span>
-                </div>
-            </button>
+            <div className="text">
+                <span>
+                    {props.text}
+                </span>
+            </div>
 
             <div className="counter-container">
                 <div className="amount">
@@ -33,6 +32,22 @@ export const Tile = (props: ITileProps) => {
                         {props.score}
                     </span>
                 </div>
+            </div>
+
+            <div className="button-container">
+                <button onClick={props.bumpScore}>
+                    <span>
+                        +
+                    </span>
+                </button>
+
+                <button
+                    onClick={props.dropScore}
+                    disabled={props.score <= 0}>
+                    <span>
+                        -
+                    </span>
+                </button>
             </div>
         </div>
     )

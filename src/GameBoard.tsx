@@ -15,6 +15,11 @@ export const GameBoard = (props: IGameBoardProps) => {
         setScores(newScores)
     }
 
+    const dropScore = (index: number) => {
+        let newScores = scores.map((s, i) => i === index ? s - 1 : s)
+        setScores(newScores)
+    }
+
     const resetScores = () => setScores(props.gameInfo.tiles.map(_ => 0))
 
     let tiles = props.gameInfo.tiles.map((t, i) => (
@@ -22,7 +27,8 @@ export const GameBoard = (props: IGameBoardProps) => {
             text={t.text}
             amount={t.amount ?? "one sip"}
             score={scores[i]}
-            bumpScore={() => bumpScore(i)} />
+            bumpScore={() => bumpScore(i)}
+            dropScore={() => dropScore(i)} />
     ))
 
     return (
