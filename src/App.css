@@ -47,6 +47,12 @@
   grid-gap: 5px;
 }
 
+.tile {
+  background-color: red;
+  border-radius: calc(2rem / 7);
+  padding: 5px;
+}
+
 .tile > button {
   display: block;
   width: 150px;
@@ -54,19 +60,22 @@
 }
 
 .tile .text > span {
+  font-size: 10pt;
   font-weight: bold;
 }
 
 .counter-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin: 0px 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 2px;
 }
 
 .counter-container .amount {
+  font-size: 10pt;
   text-align: left;
 }
 
 .counter-container .score {
+  font-size: 10pt;
   text-align: right;
 }

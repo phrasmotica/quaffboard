@@ -14,23 +14,21 @@ export const Tile = (props: ITileProps) => {
                         {props.text}
                     </span>
                 </div>
-
-                <hr />
-
-                <div className="counter-container">
-                    <div className="amount">
-                        <span>
-                            {props.amount}
-                        </span>
-                    </div>
-
-                    <div className="score">
-                        <span>
-                            {props.score}
-                        </span>
-                    </div>
-                </div>
             </button>
+
+            <div className="counter-container">
+                <div className="amount">
+                    <span>
+                        {props.amount}
+                    </span>
+                </div>
+
+                <div className="score">
+                    <span>
+                        {props.score}
+                    </span>
+                </div>
+            </div>
         </div>
     )
 }
