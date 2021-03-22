@@ -6,8 +6,13 @@ interface ITileProps {
 }
 
 export const Tile = (props: ITileProps) => {
+    let className = "tile"
+    if (props.score > 0) {
+        className += " checked"
+    }
+
     return (
-        <div className="tile">
+        <div className={className}>
             <button onClick={props.bumpScore}>
                 <div className="text">
                     <span>
