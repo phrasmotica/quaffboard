@@ -9,7 +9,7 @@ export const Tile = (props: ITileProps) => {
     return (
         <div className="tile">
             <button onClick={props.bumpScore}>
-                <div>
+                <div className="text">
                     <span>
                         {props.text}
                     </span>

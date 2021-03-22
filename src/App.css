@@ -44,13 +44,17 @@
 .tile-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
   grid-gap: 5px;
 }
 
 .tile > button {
+  display: block;
   width: 150px;
   height: 100px;
+}
+
+.tile .text > span {
+  font-weight: bold;
 }
 
 .counter-container {
