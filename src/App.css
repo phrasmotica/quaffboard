@@ -61,7 +61,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 150px;
+  width: 180px;
   height: 60px;
 }
 
@@ -75,7 +75,7 @@
 }
 
 .tile .text > span {
-  font-size: 10pt;
+  font-size: 12pt;
   font-weight: bold;
 }
 
@@ -86,11 +86,11 @@
 }
 
 .counter-container .amount {
-  font-size: 10pt;
+  font-size: 11pt;
   text-align: left;
 }
 
 .counter-container .score {
-  font-size: 10pt;
+  font-size: 11pt;
   text-align: right;
 }
