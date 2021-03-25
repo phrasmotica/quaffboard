@@ -1,5 +1,5 @@
-import moment, { duration } from "moment"
-import React, { useState } from "react"
+import moment from "moment"
+import { useState } from "react"
 import { Button } from "semantic-ui-react"
 
 import { GameInfo } from "./App"
@@ -48,10 +48,7 @@ export const GameBoard = (props: IGameBoardProps) => {
 
     let tileElements = tiles.map((t, i) => (
         <Tile
-            text={t.text}
-            amount={t.amount ?? "one sip"}
-            quietPeriod={duration(t.quietPeriodSeconds, "seconds")}
-            soundPath={t.sound}
+            tileInfo={t}
             occurrences={occurrences[i]}
             addOccurrence={() => addOccurrence(i)}
             removeOccurrence={() => removeOccurrence(i)} />

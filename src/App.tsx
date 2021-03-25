@@ -7,14 +7,16 @@ import "./App.css"
 
 import gameInfo from "./gameInfo.json"
 
+export type TileInfo = {
+    text: string
+    amount: string
+    quietPeriodSeconds: number
+    soundPath: string
+}
+
 export type GameInfo = {
     name: string
-    tiles: {
-        text: string
-        amount: string
-        quietPeriodSeconds: number
-        sound: string
-    }[]
+    tiles: TileInfo[]
 }
 
 const App = () => {

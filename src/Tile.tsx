@@ -1,15 +1,12 @@
-import { Duration } from "moment"
 import { useEffect, useState } from "react"
 import { Button, Progress } from  "semantic-ui-react"
 import useSound from "use-sound"
 
+import { TileInfo } from "./App"
 import { Occurrence } from "./Occurrence"
 
 interface ITileProps {
-    text: string
-    amount: string
-    quietPeriod: Duration
-    soundPath: string
+    tileInfo: TileInfo
     occurrences: Occurrence[]
     addOccurrence: () => void
     removeOccurrence: () => void
@@ -17,7 +14,7 @@ interface ITileProps {
 
 export const Tile = (props: ITileProps) => {
     const [timer, setTimer] = useState(0)
-    const [playSound] = useSound(`${process.env.PUBLIC_URL}/sounds/${props.soundPath}`)
+    const [playSound] = useSound(`${process.env.PUBLIC_URL}/sounds/${props.tileInfo.soundPath}`)
 
     useEffect(() => {
         if (timer <= 0) {
@@ -40,31 +37,31 @@ export const Tile = (props: ITileProps) => {
         className += " disabled"
     }
 
-    let quietPeriodMillis = props.quietPeriod.asMilliseconds()
+    let quietPeriodMilliseconds = 1000 * props.tileInfo.quietPeriodSeconds
 
     const addOccurrence = () => {
         props.addOccurrence()
         playSound()
 
         // enforce quiet period
-        setTimer(quietPeriodMillis)
+        setTimer(quietPeriodMilliseconds)
     }
 
-    let progressPercent = 100 * timer / quietPeriodMillis
+    let progressPercent = 100 * timer / quietPeriodMilliseconds
 
     return (
         <div className={className}>
             <div className="tile-contents">
                 <div className="text">
                     <span>
-                        {props.text}
+                        {props.tileInfo.text}
                     </span>
                 </div>
 
                 <div className="counter-container">
                     <div className="amount">
                         <span>
-                            {props.amount}
+                            {props.tileInfo.amount}
                         </span>
                     </div>
 
