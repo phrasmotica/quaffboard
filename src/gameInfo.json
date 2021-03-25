@@ -4,13 +4,13 @@
         {
             "text": "Billy Crystal",
             "amount": "one soda",
-            "quietPeriodSeconds": 0,
+            "quietPeriodSeconds": 3,
             "sound": ""
         },
         {
             "text": "Tim mispronounces a celebrity's name",
             "amount": "one sip",
-            "quietPeriodSeconds": 0,
+            "quietPeriodSeconds": 1,
             "sound": ""
         },
         {

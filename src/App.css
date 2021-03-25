@@ -50,7 +50,6 @@
 .tile {
   background-color: darkred;
   border-radius: calc(2rem / 7);
-  padding: 5px;
 }
 
 .tile.checked {
@@ -61,7 +60,11 @@
   background-color: darkslategrey;
 }
 
-.tile > .text {
+.tile > .tile-contents {
+  padding: 5px;
+}
+
+.tile > .tile-contents > .text {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,4 +100,8 @@
 .counter-container .score {
   font-size: 11pt;
   text-align: right;
+}
+
+.ui.progress .bar {
+  min-width: unset;
 }

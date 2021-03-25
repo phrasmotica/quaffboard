@@ -3,6 +3,7 @@ import React from "react"
 import { GameBoard } from "./GameBoard"
 
 import "./App.css"
+import 'semantic-ui-css/semantic.min.css'
 
 import gameInfo from "./gameInfo.json"
 

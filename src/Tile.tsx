@@ -1,5 +1,6 @@
 import { Duration } from "moment"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { Progress } from  "semantic-ui-react"
 import useSound from "use-sound"
 
 import { Occurrence } from "./Occurrence"
@@ -15,8 +16,17 @@ interface ITileProps {
 }
 
 export const Tile = (props: ITileProps) => {
-    const [disabled, setDisabled] = useState(false)
+    const [timer, setTimer] = useState(0)
     const [playSound] = useSound(`${process.env.PUBLIC_URL}/sounds/${props.soundPath}`)
+
+    useEffect(() => {
+        if (timer <= 0) {
+            return () => {}
+        }
+
+        let interval = setInterval(() => setTimer(timer - 20), 20)
+        return () => clearInterval(interval)
+    }, [timer])
 
     let score = props.occurrences.length
 
@@ -25,58 +35,69 @@ export const Tile = (props: ITileProps) => {
         className += " checked"
     }
 
+    let disabled = timer > 0
     if (disabled) {
         className += " disabled"
     }
+
+    let quietPeriodMillis = props.quietPeriod.asMilliseconds()
 
     const addOccurrence = () => {
         props.addOccurrence()
         playSound()
 
         // enforce quiet period
-        setDisabled(true)
-        setTimeout(() => setDisabled(false), props.quietPeriod.asMilliseconds())
+        setTimer(quietPeriodMillis)
     }
+
+    let progressPercent = 100 * timer / quietPeriodMillis
 
     return (
         <div className={className}>
-            <div className="text">
-                <span>
-                    {props.text}
-                </span>
-            </div>
-
-            <div className="counter-container">
-                <div className="amount">
+            <div className="tile-contents">
+                <div className="text">
                     <span>
-                        {props.amount}
+                        {props.text}
                     </span>
                 </div>
 
-                <div className="score">
-                    <span>
-                        {score}
-                    </span>
+                <div className="counter-container">
+                    <div className="amount">
+                        <span>
+                            {props.amount}
+                        </span>
+                    </div>
+
+                    <div className="score">
+                        <span>
+                            {score}
+                        </span>
+                    </div>
+                </div>
+
+                <div className="button-container">
+                    <button
+                        onClick={addOccurrence}
+                        disabled={disabled}>
+                        <span>
+                            +
+                        </span>
+                    </button>
+
+                    <button
+                        onClick={props.removeOccurrence}
+                        disabled={score <= 0}>
+                        <span>
+                            -
+                        </span>
+                    </button>
                 </div>
             </div>
 
-            <div className="button-container">
-                <button
-                    onClick={addOccurrence}
-                    disabled={disabled}>
-                    <span>
-                        +
-                    </span>
-                </button>
-
-                <button
-                    onClick={props.removeOccurrence}
-                    disabled={score <= 0}>
-                    <span>
-                        -
-                    </span>
-                </button>
-            </div>
+            <Progress
+                percent={progressPercent}
+                color="yellow"
+                attached="bottom" />
         </div>
     )
 }
