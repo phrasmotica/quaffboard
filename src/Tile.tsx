@@ -25,6 +25,10 @@ export const Tile = (props: ITileProps) => {
         className += " checked"
     }
 
+    if (disabled) {
+        className += " disabled"
+    }
+
     const addOccurrence = () => {
         props.addOccurrence()
         playSound()

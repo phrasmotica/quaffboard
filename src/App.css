@@ -57,6 +57,10 @@
   background-color: forestgreen;
 }
 
+.tile.disabled {
+  background-color: darkslategrey;
+}
+
 .tile > .text {
   display: flex;
   align-items: center;
