@@ -96,6 +96,7 @@
 .tile .text > span {
   font-size: 12pt;
   font-weight: bold;
+  color: black;
 }
 
 .counter-container {
