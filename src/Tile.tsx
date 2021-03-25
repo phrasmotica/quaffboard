@@ -1,14 +1,18 @@
+import { Occurrence } from "./Occurrence"
+
 interface ITileProps {
     text: string
     amount: string
-    score: number
-    bumpScore: () => void
-    dropScore: () => void
+    occurrences: Occurrence[]
+    addOccurrence: () => void
+    removeOccurrence: () => void
 }
 
 export const Tile = (props: ITileProps) => {
+    let score = props.occurrences.length
+
     let className = "tile"
-    if (props.score > 0) {
+    if (score > 0) {
         className += " checked"
     }
 
@@ -29,21 +33,21 @@ export const Tile = (props: ITileProps) => {
 
                 <div className="score">
                     <span>
-                        {props.score}
+                        {score}
                     </span>
                 </div>
             </div>
 
             <div className="button-container">
-                <button onClick={props.bumpScore}>
+                <button onClick={props.addOccurrence}>
                     <span>
                         +
                     </span>
                 </button>
 
                 <button
-                    onClick={props.dropScore}
-                    disabled={props.score <= 0}>
+                    onClick={props.removeOccurrence}
+                    disabled={score <= 0}>
                     <span>
                         -
                     </span>

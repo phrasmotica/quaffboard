@@ -1,6 +1,8 @@
+import moment from "moment"
 import React, { useState } from "react"
-import { GameInfo } from "./App"
 
+import { GameInfo } from "./App"
+import { Occurrence } from "./Occurrence"
 import { Tile } from "./Tile"
 
 interface IGameBoardProps {
@@ -8,27 +10,47 @@ interface IGameBoardProps {
 }
 
 export const GameBoard = (props: IGameBoardProps) => {
-    const [scores, setScores] = useState(props.gameInfo.tiles.map(_ => 0))
+    const [occurrences, setOccurrences] = useState<Occurrence[][]>(
+        props.gameInfo.tiles.map(_ => [])
+    )
 
-    const bumpScore = (index: number) => {
-        let newScores = scores.map((s, i) => i === index ? s + 1 : s)
-        setScores(newScores)
+    const addOccurrence = (index: number) => {
+        let newOccurrences = occurrences.map((s, i) => {
+            if (i === index) {
+                let newOccurrence = {
+                    time: moment()
+                } as Occurrence
+
+                s.push(newOccurrence)
+            }
+
+            return s
+        })
+
+        setOccurrences(newOccurrences)
     }
 
-    const dropScore = (index: number) => {
-        let newScores = scores.map((s, i) => i === index ? s - 1 : s)
-        setScores(newScores)
+    const removeOccurrence = (index: number) => {
+        let newOccurrences = occurrences.map((s, i) => {
+            if (i === index) {
+                s.pop()
+            }
+
+            return s
+        })
+
+        setOccurrences(newOccurrences)
     }
 
-    const resetScores = () => setScores(props.gameInfo.tiles.map(_ => 0))
+    const resetScores = () => setOccurrences(props.gameInfo.tiles.map(_ => []))
 
     let tiles = props.gameInfo.tiles.map((t, i) => (
         <Tile
             text={t.text}
             amount={t.amount ?? "one sip"}
-            score={scores[i]}
-            bumpScore={() => bumpScore(i)}
-            dropScore={() => dropScore(i)} />
+            occurrences={occurrences[i]}
+            addOccurrence={() => addOccurrence(i)}
+            removeOccurrence={() => removeOccurrence(i)} />
     ))
 
     return (
