@@ -3,7 +3,6 @@ import { useState } from "react"
 import { Button } from "semantic-ui-react"
 
 import { GameInfo } from "./App"
-import { shuffle } from "./Helpers"
 import { Occurrence } from "./Occurrence"
 import { Tile } from "./Tile"
 
@@ -12,7 +11,7 @@ interface IGameBoardProps {
 }
 
 export const GameBoard = (props: IGameBoardProps) => {
-    let tiles = shuffle(props.gameInfo.tiles)
+    let tiles = props.gameInfo.tiles
 
     const [occurrences, setOccurrences] = useState<Occurrence[][]>(tiles.map(_ => []))
 

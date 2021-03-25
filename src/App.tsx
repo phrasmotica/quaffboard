@@ -1,6 +1,5 @@
-import React from "react"
-
 import { GameBoard } from "./GameBoard"
+import { shuffle } from "./Helpers"
 
 import 'semantic-ui-css/semantic.min.css'
 import "./App.css"
@@ -20,12 +19,14 @@ export type GameInfo = {
 }
 
 const App = () => {
+    shuffle(gameInfo)
+
     return (
         <div className="App">
             <header className="App-header">
                 <div>
                     <GameBoard
-                        gameInfo={gameInfo as GameInfo} />
+                        gameInfo={gameInfo} />
                 </div>
             </header>
         </div>
