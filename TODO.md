@@ -1,0 +1,25 @@
+# Todo List
+
+- [ ] add sound effects when buttons are clicked
+    - "QUIET ON SET" and other opening monologues from Tim
+- [ ] visual easter egg when entire board is completed
+    - "OSCER" written in VHS tapes from third (second?) Oscar special appears on screen
+- [ ] switch between bingo mode (yes/no) and tally mode (count)
+    - tiles can be configured independently
+- [ ] nicer flavourful background
+    - plus button can be a bag of popcorn, minus can be a cup of soda
+- [ ] don't reveal amount to be imbibed until the thing has happened
+- [ ] randomise amounts to be imbibed for each tile
+    - impose reasonable limits as appropriate
+- [ ] maximum of one tile that instructs to down your drink
+- [ ] total number of sips/shots/drinks counter
+- [ ] select drink type from dropdown. Changes the amounts on the tiles
+- [x] quiet period for a tile
+- [x] randomise layout of tiles each time
+- boards for:
+    - [ ] MasterChef
+    - [ ] How It's Made
+    - [ ] Jon Bois videos
+    - [ ] corporate keynotes
+- [ ] menu bar at top of screen with website name
+    - dropdown or regular menu items for different boards
