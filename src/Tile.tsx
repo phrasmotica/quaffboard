@@ -1,3 +1,5 @@
+import { Duration } from "moment"
+import { useState } from "react"
 import useSound from "use-sound"
 
 import { Occurrence } from "./Occurrence"
@@ -5,6 +7,7 @@ import { Occurrence } from "./Occurrence"
 interface ITileProps {
     text: string
     amount: string
+    quietPeriod: Duration
     soundPath: string
     occurrences: Occurrence[]
     addOccurrence: () => void
@@ -12,6 +15,7 @@ interface ITileProps {
 }
 
 export const Tile = (props: ITileProps) => {
+    const [disabled, setDisabled] = useState(false)
     const [playSound] = useSound(`${process.env.PUBLIC_URL}/sounds/${props.soundPath}`)
 
     let score = props.occurrences.length
@@ -24,6 +28,10 @@ export const Tile = (props: ITileProps) => {
     const addOccurrence = () => {
         props.addOccurrence()
         playSound()
+
+        // enforce quiet period
+        setDisabled(true)
+        setTimeout(() => setDisabled(false), props.quietPeriod.asMilliseconds())
     }
 
     return (
@@ -49,7 +57,9 @@ export const Tile = (props: ITileProps) => {
             </div>
 
             <div className="button-container">
-                <button onClick={addOccurrence}>
+                <button
+                    onClick={addOccurrence}
+                    disabled={disabled}>
                     <span>
                         +
                     </span>

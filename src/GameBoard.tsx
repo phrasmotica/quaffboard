@@ -1,4 +1,4 @@
-import moment from "moment"
+import moment, { duration } from "moment"
 import React, { useState } from "react"
 
 import { GameInfo } from "./App"
@@ -48,6 +48,7 @@ export const GameBoard = (props: IGameBoardProps) => {
         <Tile
             text={t.text}
             amount={t.amount ?? "one sip"}
+            quietPeriod={duration(t.quietPeriodSeconds, "seconds")}
             soundPath={t.sound}
             occurrences={occurrences[i]}
             addOccurrence={() => addOccurrence(i)}

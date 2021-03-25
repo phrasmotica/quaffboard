@@ -4,126 +4,151 @@
         {
             "text": "Billy Crystal",
             "amount": "one soda",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tim mispronounces a celebrity's name",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Dekkar song is played during a segment",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Gregg rolls his eyes",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tom Cruise Heidecker",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Gregg introduces a new segment",
             "amount": "down your drink",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Joe Estevez",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tim stares briefly at his prompt card while Gregg is talking",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Oscar pick",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tim and Gregg start arguing once the lights cut out",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Gregg is wearing a bowling shirt",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "The Hobbit",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Mark Proksch impersonates a movie legend",
             "amount": "two sips",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Six bags of popcorn two sodas",
             "amount": "one sip",
+            "quietPeriodSeconds": 5,
             "sound": "ilovethismovie.mp3"
         },
         {
             "text": "Tim rages at a crew member",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Decker promo",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Consumption of champagne",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Episode ends prematurely",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tim's Soapbox",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Victorville Film Archive",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Ant-Man",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tim or Gregg breaks character",
             "amount": "two sips",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Star Trek lore",
             "amount": "two sips",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Tim disputing Gregg's infallible grasp of movie trivia",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         },
         {
             "text": "Oscar special finale",
             "amount": "one sip",
+            "quietPeriodSeconds": 0,
             "sound": ""
         }
     ]

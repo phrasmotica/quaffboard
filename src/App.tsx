@@ -11,6 +11,7 @@ export type GameInfo = {
     tiles: {
         text: string
         amount: string
+        quietPeriodSeconds: number
         sound: string
     }[]
 }
