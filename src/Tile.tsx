@@ -1,19 +1,29 @@
+import useSound from "use-sound"
+
 import { Occurrence } from "./Occurrence"
 
 interface ITileProps {
     text: string
     amount: string
+    soundPath: string
     occurrences: Occurrence[]
     addOccurrence: () => void
     removeOccurrence: () => void
 }
 
 export const Tile = (props: ITileProps) => {
+    const [playSound] = useSound(`${process.env.PUBLIC_URL}/sounds/${props.soundPath}`)
+
     let score = props.occurrences.length
 
     let className = "tile"
     if (score > 0) {
         className += " checked"
+    }
+
+    const addOccurrence = () => {
+        props.addOccurrence()
+        playSound()
     }
 
     return (
@@ -39,7 +49,7 @@ export const Tile = (props: ITileProps) => {
             </div>
 
             <div className="button-container">
-                <button onClick={props.addOccurrence}>
+                <button onClick={addOccurrence}>
                     <span>
                         +
                     </span>

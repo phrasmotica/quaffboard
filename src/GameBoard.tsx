@@ -48,6 +48,7 @@ export const GameBoard = (props: IGameBoardProps) => {
         <Tile
             text={t.text}
             amount={t.amount ?? "one sip"}
+            soundPath={t.sound}
             occurrences={occurrences[i]}
             addOccurrence={() => addOccurrence(i)}
             removeOccurrence={() => removeOccurrence(i)} />
