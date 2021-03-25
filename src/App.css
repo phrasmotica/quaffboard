@@ -48,7 +48,7 @@
 }
 
 .tile {
-  background-color: red;
+  background-color: darkred;
   border-radius: calc(2rem / 7);
   padding: 5px;
 }
