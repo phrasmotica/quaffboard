@@ -1,6 +1,6 @@
 import { Duration } from "moment"
 import { useEffect, useState } from "react"
-import { Progress } from  "semantic-ui-react"
+import { Button, Progress } from  "semantic-ui-react"
 import useSound from "use-sound"
 
 import { Occurrence } from "./Occurrence"
@@ -76,21 +76,21 @@ export const Tile = (props: ITileProps) => {
                 </div>
 
                 <div className="button-container">
-                    <button
+                    <Button
                         onClick={addOccurrence}
                         disabled={disabled}>
                         <span>
                             +
                         </span>
-                    </button>
+                    </Button>
 
-                    <button
+                    <Button
                         onClick={props.removeOccurrence}
                         disabled={score <= 0}>
                         <span>
                             -
                         </span>
-                    </button>
+                    </Button>
                 </div>
             </div>
 

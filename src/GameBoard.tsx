@@ -1,5 +1,6 @@
 import moment, { duration } from "moment"
 import React, { useState } from "react"
+import { Button } from "semantic-ui-react"
 
 import { GameInfo } from "./App"
 import { Occurrence } from "./Occurrence"
@@ -68,9 +69,9 @@ export const GameBoard = (props: IGameBoardProps) => {
             </div>
 
             <div>
-                <button onClick={resetScores}>
+                <Button onClick={resetScores}>
                     Reset
-                </button>
+                </Button>
             </div>
         </div>
     )

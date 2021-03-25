@@ -45,6 +45,7 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 5px;
+  margin-bottom: 5px;
 }
 
 .tile {
@@ -75,6 +76,14 @@
 .button-container {
   display: grid;
   grid-auto-flow: column;
+  grid-gap: 5px;
+}
+
+.button-container > .ui.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
 }
 
 .button-container > button > span {
@@ -104,4 +113,8 @@
 
 .ui.progress .bar {
   min-width: unset;
+}
+
+.ui.button {
+  margin: unset;
 }
