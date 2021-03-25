@@ -3,6 +3,7 @@ import React, { useState } from "react"
 import { Button } from "semantic-ui-react"
 
 import { GameInfo } from "./App"
+import { shuffle } from "./Helpers"
 import { Occurrence } from "./Occurrence"
 import { Tile } from "./Tile"
 
@@ -11,9 +12,9 @@ interface IGameBoardProps {
 }
 
 export const GameBoard = (props: IGameBoardProps) => {
-    const [occurrences, setOccurrences] = useState<Occurrence[][]>(
-        props.gameInfo.tiles.map(_ => [])
-    )
+    let tiles = shuffle(props.gameInfo.tiles)
+
+    const [occurrences, setOccurrences] = useState<Occurrence[][]>(tiles.map(_ => []))
 
     const addOccurrence = (index: number) => {
         let newOccurrences = occurrences.map((s, i) => {
@@ -43,9 +44,9 @@ export const GameBoard = (props: IGameBoardProps) => {
         setOccurrences(newOccurrences)
     }
 
-    const resetScores = () => setOccurrences(props.gameInfo.tiles.map(_ => []))
+    const resetScores = () => setOccurrences(tiles.map(_ => []))
 
-    let tiles = props.gameInfo.tiles.map((t, i) => (
+    let tileElements = tiles.map((t, i) => (
         <Tile
             text={t.text}
             amount={t.amount ?? "one sip"}
@@ -65,7 +66,7 @@ export const GameBoard = (props: IGameBoardProps) => {
             </div>
 
             <div className="tile-grid">
-                {tiles}
+                {tileElements}
             </div>
 
             <div>
