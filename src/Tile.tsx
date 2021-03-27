@@ -3,6 +3,7 @@ import { Button, Progress } from  "semantic-ui-react"
 import useSound from "use-sound"
 
 import { TileInfo } from "./App"
+import { createPenaltyString } from "./Helpers"
 import { Occurrence } from "./Occurrence"
 
 interface ITileProps {
@@ -49,6 +50,8 @@ export const Tile = (props: ITileProps) => {
 
     let progressPercent = 100 * timer / quietPeriodMilliseconds
 
+    let penaltyStr = createPenaltyString(props.tileInfo.penalty)
+
     return (
         <div className={className}>
             <div className="tile-contents">
@@ -61,7 +64,7 @@ export const Tile = (props: ITileProps) => {
                 <div className="counter-container">
                     <div className="amount">
                         <span>
-                            {props.tileInfo.amount}
+                            {penaltyStr}
                         </span>
                     </div>
 

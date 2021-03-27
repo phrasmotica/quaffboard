@@ -1,4 +1,4 @@
-import { GameInfo } from "./App";
+import { GameInfo, Penalty } from "./App";
 
 /**
  * Returns a shuffled copy of the given array.
@@ -20,4 +20,15 @@ const shuffleArr = <T>(arr: T[]) => {
  */
 export const shuffle = (gameInfo: GameInfo) => {
     gameInfo.tiles = shuffleArr(gameInfo.tiles)
+}
+
+/**
+ * Returns a string describing the given penalty.
+ */
+export const createPenaltyString = (penalty: Penalty) => {
+    if (penalty.measure === "drink") {
+        return "down your drink"
+    }
+
+    return `${penalty.measure} x${penalty.amount}`
 }

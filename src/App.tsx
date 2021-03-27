@@ -4,11 +4,18 @@ import { shuffle } from "./Helpers"
 import 'semantic-ui-css/semantic.min.css'
 import "./App.css"
 
-import gameInfo from "./gameInfo.json"
+import rawGameInfo from "./gameInfo.json"
+
+export type Measure = "sip" | "soda" | "drink"
+
+export type Penalty = {
+    amount: number
+    measure: Measure
+}
 
 export type TileInfo = {
     text: string
-    amount: string
+    penalty: Penalty
     quietPeriodSeconds: number
     soundPath: string
 }
@@ -17,6 +24,8 @@ export type GameInfo = {
     name: string
     tiles: TileInfo[]
 }
+
+const gameInfo = rawGameInfo as GameInfo
 
 const App = () => {
     shuffle(gameInfo)
