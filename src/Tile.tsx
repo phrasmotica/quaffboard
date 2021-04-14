@@ -48,6 +48,13 @@ export const Tile = (props: ITileProps) => {
         setTimer(quietPeriodMilliseconds)
     }
 
+    const removeOccurrence = () => {
+        props.removeOccurrence()
+
+        // reset timer if this was called during a quiet period
+        setTimer(0)
+    }
+
     let progressPercent = 100 * timer / quietPeriodMilliseconds
 
     let penaltyStr = createPenaltyString(props.tileInfo.penalty)
@@ -85,7 +92,7 @@ export const Tile = (props: ITileProps) => {
                     </Button>
 
                     <Button
-                        onClick={props.removeOccurrence}
+                        onClick={removeOccurrence}
                         disabled={score <= 0}>
                         <span>
                             -
